@@ -1,36 +1,26 @@
-import { useState } from 'react';
-import { projectsData, categories } from '../data/projects';
-import ProjectGrid from '../components/ProjectGrid/ProjectGrid';
-import './Projects.css';
-
-function Projects() {
-const [activeFilter, setActiveFilter] = useState('all');
-
-const visible = activeFilter === 'all' 
-    ? projectsData 
-    : projectsData.filter(p => p.category === activeFilter);
-
-return (
-    <div className='projects-page container'>
-        <div className='projects-header'>
-            <h1>My Projects</h1>
-            <div className='project-filters'>
-                {categories.map(cat => (
-                    <button
-                        key={cat}
-                        className={cat === activeFilter ? 'filter-btn active' : 'filter-btn'}
-                        onClick={() => setActiveFilter(cat)}
-                    >
-                        {cat.toUpperCase()}
-                    </button>
-                ))}
-            </div>
-        </div>
-
-        <ProjectGrid projects={visible} />
-    </div>
-);
-
-
+.projects-page {
+  padding-top: 40px;
+  padding-bottom: 60px;
 }
-export default Projects;
+
+.projects-header {
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.project-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+@media (max-width: 768px) {
+  .projects-header {
+    align-items: center;
+    text-align: center;
+  }
+}
