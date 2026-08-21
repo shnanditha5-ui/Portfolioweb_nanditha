@@ -20,8 +20,8 @@ longDesc: 'A multi-page React portfolio with routing, dark mode, and live GitHub
 tech: ['React', 'CSS'],
 category: 'web',
 featured: true,
-liveUrl: '#',
-githubUrl: '#'
+liveUrl: 'https://nandithashportfolio.netlify.app/',
+githubUrl: 'https://github.com/shnanditha5-ui/Portfolioweb_nanditha'
 },
 {
 id: 3,
